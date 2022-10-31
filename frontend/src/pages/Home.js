@@ -16,8 +16,14 @@ const Home = () => {
     >
       <Typography>Banner</Typography>
       <Typography>Navmenu</Typography>
-      <Typography variant="h5" gutterBottom>
-        Miraris Interactive is a team of creators, seeking ways to make their dreams reality and express themselves. Inspired by smaller Japanese game development studios, and ran by creators from different nations, Miraris is purely about the games as pieces of art, not products to sell.
+      <Typography
+        variant="h5"
+        gutterBottom
+      >
+        Miraris Interactive is a team of creators, seeking ways to make their
+        dreams reality and express themselves. Inspired by smaller Japanese game
+        development studios, and ran by creators from different nations, Miraris
+        is purely about the games as pieces of art, not products to sell.
       </Typography>
       <Typography>Image slider</Typography>
       <Box

@@ -3,6 +3,7 @@ import "./App.css"
 import Home from "./pages/Home.js"
 import News from "./pages/News.js"
 import Portfolio from "./pages/Portfolio.js"
+import Forum from "./pages/Forum.js"
 
 export default function App() {
   return (
@@ -19,6 +20,10 @@ export default function App() {
         <Route
           path="/projects"
           element={<Portfolio />}
+        />
+        <Route
+          path="/forum"
+          element={<Forum />}
         />
       </Routes>
     </BrowserRouter>
