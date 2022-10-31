@@ -6,7 +6,7 @@ Wireframe link: https://www.figma.com/file/g5hu72DvxdODsOABAo4FQJ/Miraris?node-i
 ### Projekti funktsionaalsused
 * Signup ja login
   - Lehel on võimalik registreeruda ja sisse logida. 
-  - Külalistel ja registreerunud kasutajatel on erinevad vaated, näiteks foorumis postitada saab ainult sisseloginud kasutaja.
+  - Külalistel ja registreerunud kasutusel on erinevad vaated, näiteks foorumis postitada saab ainult sisseloginud kasutaja.
 * Portfoolio
   - Avalehel on pildislaider ja/või nupud, mis viivad vastavate projektide juurde.
   - Igal projektil on oma eraldi leht, kus on põhjalikum tutvustus selle kohta.
