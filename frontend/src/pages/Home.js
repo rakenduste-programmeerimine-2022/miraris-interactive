@@ -1,6 +1,8 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import "../App.css"
 import { Box, Typography } from "@mui/material"
+import Header from "../components/Header"
 
 const Home = () => {
   return (
@@ -15,7 +17,7 @@ const Home = () => {
       }}
     >
       <Typography>Banner</Typography>
-      <Typography>Navmenu</Typography>
+      <Header></Header>
       <Typography
         variant="h5"
         gutterBottom
