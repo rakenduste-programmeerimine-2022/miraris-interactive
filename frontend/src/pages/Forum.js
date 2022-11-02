@@ -5,7 +5,7 @@ import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
 
-const Portfolio = () => {
+const Forum = () => {
   return (
     <Box
       sx={{
@@ -22,48 +22,52 @@ const Portfolio = () => {
       <Typography>Our projects</Typography>
       <List>
         <ListItem>
-            <ListItemText
-                primary="Category 1"
-                secondary="Category 1 description"
-            />
-            <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-                <ListItem>
-                    <ListItemText
-                        primary="Topic 1"
-                        secondary="Topic 1 description"
-                    />
-                </ListItem>
-                <ListItem>
-                    <ListItemText
-                        primary="Topic 2"
-                        secondary="Topic 2 description"
-                    />
-                </ListItem>
-            </List>
+          <ListItemText
+            primary="Category 1"
+            secondary="Category 1 description"
+          />
+          <List
+            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          >
+            <ListItem>
+              <ListItemText
+                primary="Topic 1"
+                secondary="Topic 1 description"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Topic 2"
+                secondary="Topic 2 description"
+              />
+            </ListItem>
+          </List>
         </ListItem>
         <ListItem>
-            <ListItemText
-                primary="Category 2"
-                secondary="Category 2 description"
-            />
-            <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-                <ListItem>
-                    <ListItemText
-                        primary="Topic 1"
-                        secondary="Topic 1 description"
-                    />
-                </ListItem>
-                <ListItem>
-                    <ListItemText
-                        primary="Topic 2"
-                        secondary="Topic 2 description"
-                    />
-                </ListItem>
-            </List>
+          <ListItemText
+            primary="Category 2"
+            secondary="Category 2 description"
+          />
+          <List
+            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+          >
+            <ListItem>
+              <ListItemText
+                primary="Topic 1"
+                secondary="Topic 1 description"
+              />
+            </ListItem>
+            <ListItem>
+              <ListItemText
+                primary="Topic 2"
+                secondary="Topic 2 description"
+              />
+            </ListItem>
+          </List>
         </ListItem>
       </List>
     </Box>
   )
 }
 
-export default Portfolio
+export default Forum
