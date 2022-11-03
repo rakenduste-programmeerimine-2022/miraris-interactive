@@ -4,6 +4,7 @@ import { Box, Typography } from "@mui/material"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
+import Header from "../components/Header"
 
 const Portfolio = () => {
   return (
@@ -18,7 +19,7 @@ const Portfolio = () => {
       }}
     >
       <Typography>Banner</Typography>
-      <Typography>Navmenu</Typography>
+      <Header></Header>
       <Typography>Our projects</Typography>
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         <ListItem>
