@@ -6,7 +6,7 @@ import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
 import Header from "../components/Header"
 
-const Portfolio = () => {
+const Forum = () => {
   return (
     <Box
       sx={{
@@ -71,4 +71,5 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export default Forum
+

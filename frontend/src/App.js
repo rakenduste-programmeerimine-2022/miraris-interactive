@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
-import Home from "./pages/Home.js"
-import News from "./pages/News.js"
-import Portfolio from "./pages/Portfolio.js"
-import Forum from "./pages/Forum.js"
+import Home from "./pages/Home"
+import News from "./pages/News"
+import NewsPage from "./pages/NewsPage"
+import Portfolio from "./pages/Portfolio"
+import Forum from "./pages/Forum"
+import ForumTopic from "./pages/ForumTopic"
 
 export default function App() {
   return (
@@ -18,12 +20,20 @@ export default function App() {
           element={<News />}
         />
         <Route
+          path="/newspage"
+          element={<NewsPage />}
+        />
+        <Route
           path="/projects"
           element={<Portfolio />}
         />
         <Route
           path="/forum"
           element={<Forum />}
+        />
+        <Route
+          path="/forumtopic"
+          element={<ForumTopic />}
         />
       </Routes>
     </BrowserRouter>
