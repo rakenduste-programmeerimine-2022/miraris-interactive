@@ -4,6 +4,7 @@ import { Box, Typography } from "@mui/material"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
+import Header from "../components/Header"
 
 const Forum = () => {
   return (
@@ -18,7 +19,7 @@ const Forum = () => {
       }}
     >
       <Typography>Banner</Typography>
-      <Typography>Navmenu</Typography>
+      <Header></Header>
       <Typography>Our projects</Typography>
       <List>
         <ListItem>
@@ -71,3 +72,4 @@ const Forum = () => {
 }
 
 export default Forum
+

@@ -4,8 +4,7 @@ import { Box, Typography } from "@mui/material"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
-import ListItemAvatar from "@mui/material/ListItemAvatar"
-import Avatar from "@mui/material/Avatar"
+import Header from "../components/Header"
 
 const News = () => {
   return (
@@ -20,7 +19,7 @@ const News = () => {
       }}
     >
       <Typography>Banner</Typography>
-      <Typography>Navmenu</Typography>
+      <Header></Header>
       <Typography>All news</Typography>
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         <ListItem>
