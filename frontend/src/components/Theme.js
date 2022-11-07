@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles"
 
 const Theme = createTheme({
   palette: {
@@ -10,9 +10,14 @@ const Theme = createTheme({
   },
   typography: {
     fontSize: 16,
-        navbar: {
-            color: 'white',
-        }
+    introduction: {
+      fontSize: 24,
+      align: "center",
+      padding: 10
+    },
+    navbar: {
+      color: "white"
+    }
   }
 })
 

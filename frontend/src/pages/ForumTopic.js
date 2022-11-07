@@ -1,7 +1,7 @@
 import React from "react"
 import "../App.css"
 import { Box, Typography } from "@mui/material"
-import { ThemeProvider } from '@mui/material/styles'
+import { ThemeProvider } from "@mui/material/styles"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
@@ -27,7 +27,9 @@ const ForumTopic = () => {
         <Header></Header>
         <Typography>Topic name</Typography>
         <Typography variant="subtitle2">Topic description</Typography>
-        <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        <List
+          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+        >
           <ListItem>
             <ListItemAvatar>
               <PersonIcon />

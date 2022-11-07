@@ -6,6 +6,8 @@ import NewsPage from "./pages/NewsPage"
 import Portfolio from "./pages/Portfolio"
 import Forum from "./pages/Forum"
 import ForumTopic from "./pages/ForumTopic"
+import Login from "./pages/Login"
+import Signup from "./pages/Signup"
 
 export default function App() {
   return (
@@ -34,6 +36,14 @@ export default function App() {
         <Route
           path="/forum/topic"
           element={<ForumTopic />}
+        />
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+        <Route
+          path="/signup"
+          element={<Signup />}
         />
       </Routes>
     </BrowserRouter>
