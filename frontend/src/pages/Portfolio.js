@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "../App.css"
 import { Box, Typography } from "@mui/material"
-import { ThemeProvider } from '@mui/material/styles'
+import { ThemeProvider } from "@mui/material/styles"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
@@ -24,7 +24,9 @@ const Portfolio = () => {
         <Typography>Banner</Typography>
         <Header></Header>
         <Typography>Our projects</Typography>
-        <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        <List
+          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+        >
           <ListItem>
             <ListItemText
               primary="Project 1"
