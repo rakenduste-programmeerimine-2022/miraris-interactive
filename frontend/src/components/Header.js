@@ -1,6 +1,8 @@
 import { AppBar, Box, Toolbar, MenuItem, Typography } from "@mui/material"
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import Theme from "./Theme"
+import { ThemeProvider } from '@mui/material/styles'
 
 export default function Header() {
   const pages = ["home", "news", "projects", "forum"]
@@ -21,19 +23,24 @@ export default function Header() {
   }
 
   return (
-    <AppBar position="sticky" sx={{ background: "#ba9120", alignItems: "center" }}>
-      <Toolbar disableGutters>
-        <Box sx={{ display: "flex", background: "#a17c16" }}>
-          {pages.map(page => (
-            <MenuItem
-              key={page}
-              onClick={e => handleRoute(e)}
-            >
-              <Typography textAlign="center">{page}</Typography>
-            </MenuItem>
-          ))}
-        </Box>
-      </Toolbar>
-    </AppBar>
+    <ThemeProvider theme={Theme}>
+      <AppBar
+        position="sticky"
+        sx={{ background: "#ba9120", alignItems: "center", variant: "navbar"}}
+      >
+        <Toolbar disableGutters>
+          <Box sx={{ display: "flex", background: "#a17c16" }}>
+            {pages.map(page => (
+              <MenuItem
+                key={page}
+                onClick={e => handleRoute(e)}
+              >
+                <Typography textAlign="center" variant="navbar">{page}</Typography>
+              </MenuItem>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </ThemeProvider>
   )
 }

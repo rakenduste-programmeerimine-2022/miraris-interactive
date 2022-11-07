@@ -20,7 +20,7 @@ export default function App() {
           element={<News />}
         />
         <Route
-          path="/newspage"
+          path="/news/newspage"
           element={<NewsPage />}
         />
         <Route
@@ -32,7 +32,7 @@ export default function App() {
           element={<Forum />}
         />
         <Route
-          path="/forumtopic"
+          path="/forum/topic"
           element={<ForumTopic />}
         />
       </Routes>
