@@ -1,6 +1,19 @@
 import { createTheme } from "@mui/material/styles"
 
 const Theme = createTheme({
+  components:{
+    MuiButton: {
+      styleOverrides:{
+        root:{
+          color: "#ba9120",
+          boxShadow: "20px",
+          border: "1px solid #a17c16",
+          fontSize: "14px",
+          fontWeight: "bold"
+        }
+      }
+    }
+  },
   palette: {
     primary: {
       main: "#ba9120",

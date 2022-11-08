@@ -8,6 +8,7 @@ import Forum from "./pages/Forum"
 import ForumTopic from "./pages/ForumTopic"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
+import Project from "./pages/Project"
 
 export default function App() {
   return (
@@ -28,6 +29,10 @@ export default function App() {
         <Route
           path="/projects"
           element={<Portfolio />}
+        />
+        <Route
+          path="/projects/project"
+          element={<Project />}
         />
         <Route
           path="/forum"

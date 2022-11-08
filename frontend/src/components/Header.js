@@ -1,4 +1,11 @@
-import { AppBar, Box, Toolbar, MenuItem, Typography, Button } from "@mui/material"
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  MenuItem,
+  Typography,
+  Button
+} from "@mui/material"
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import Theme from "./Theme"
@@ -33,36 +40,36 @@ export default function Header() {
   return (
     <ThemeProvider theme={Theme}>
       <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "top",
-            flexDirection: "row",
-            gap: "25px",
-            height: "100vh"
-          }}
-        >
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "top",
+          flexDirection: "row",
+          gap: "25px",
+          height: "100vh"
+        }}
+      >
         <Box
-            component="img"
-            sx={{
-              height: 90,
-              width: 250
-            }}
-            src="https://miraris.do.am/resource/logo.png"
-          />
-          <Button
-            color="primary"
-            onClick={loginPage}
-          >
-            Login
-          </Button>
-          <Button
-            color="primary"
-            onClick={signupPage}
-          >
-            Signup
-          </Button>
-        </Box>
+          component="img"
+          sx={{
+            height: 90,
+            width: 250
+          }}
+          src="https://miraris.do.am/resource/logo.png"
+        />
+        <Button
+          color="primary"
+          onClick={loginPage}
+        >
+          Login
+        </Button>
+        <Button
+          color="primary"
+          onClick={signupPage}
+        >
+          Signup
+        </Button>
+      </Box>
       <AppBar
         position="sticky"
         sx={{ background: "#ba9120", alignItems: "center", variant: "navbar" }}

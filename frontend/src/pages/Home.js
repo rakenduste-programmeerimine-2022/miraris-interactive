@@ -7,6 +7,15 @@ import Header from "../components/Header"
 import Theme from "../components/Theme"
 
 const Home = () => {
+  const navigate = useNavigate()
+  const project1 = () => {
+    let path = "/projects/project"
+    navigate(path)
+  }
+  const project2 = () => {
+    let path = "/projects/project"
+    navigate(path)
+  }
   return (
     <ThemeProvider theme={Theme}>
       <Box
@@ -16,7 +25,8 @@ const Home = () => {
           justifyContent: "top",
           flexDirection: "column",
           gap: "25px",
-          height: "100vh"
+          height: "100vh",
+          width: "100%"
         }}
       >
         <Header></Header>
@@ -29,7 +39,19 @@ const Home = () => {
           creators from different nations, Miraris is purely about the games as
           pieces of art, not products to sell.
         </Typography>
-        <Typography>Image slider</Typography>
+        <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "top",
+              flexDirection: "row",
+              gap: "25px",
+              height: "100vh",
+              width: "10vh"
+            }}
+        >
+          <Typography>Image Slider</Typography>
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -41,7 +63,30 @@ const Home = () => {
           }}
         >
           <Typography>News</Typography>
-          <Typography>Buttons</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "top",
+              flexDirection: "column",
+              gap: "25px",
+              height: "100vh",
+              width: "100vh"
+            }}
+          >
+            <Button
+              variant="projectButton"
+              onClick={project1}
+            >
+              Painted Blood
+            </Button>
+            <Button
+              color="primary"
+              onClick={project2}
+            >
+              NatArc
+            </Button>
+          </Box>
         </Box>
       </Box>
     </ThemeProvider>
