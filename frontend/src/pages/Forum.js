@@ -21,7 +21,6 @@ const Forum = () => {
           height: "100vh"
         }}
       >
-        <Typography>Banner</Typography>
         <Header></Header>
         <Typography>Our projects</Typography>
         <List>

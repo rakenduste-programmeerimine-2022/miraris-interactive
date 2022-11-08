@@ -8,7 +8,7 @@ import Theme from "../components/Theme"
 const Login = () => {
   return (
     <ThemeProvider theme={Theme}>
-        <Box
+      <Box
         sx={{
           display: "flex",
           alignItems: "center",
@@ -18,42 +18,21 @@ const Login = () => {
           height: "100vh"
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "top",
-            flexDirection: "row",
-            gap: "25px",
-            height: "100vh"
-          }}
-        >
-          <Box
-            component="img"
-            sx={{
-              height: 90,
-              width: 250
-            }}
-            src="https://miraris.do.am/resource/logo.png"
-          />
-          <Button>Login</Button>
-          <Button>Signup</Button>
-        </Box>
         <Header></Header>
-            <Typography>Signup</Typography>
-            <Typography>Username</Typography>
-            <TextField></TextField>
-            <Typography>email</Typography>
-            <TextField></TextField>
-            <Typography>Password</Typography>
-            <TextField></TextField>
-            <Button
-                color="success"
-                variant="contained"
-            >
-                Signup
-            </Button>
-        </Box>
+        <Typography>Signup</Typography>
+        <Typography>Username</Typography>
+        <TextField></TextField>
+        <Typography>email</Typography>
+        <TextField></TextField>
+        <Typography>Password</Typography>
+        <TextField></TextField>
+        <Button
+          color="success"
+          variant="contained"
+        >
+          Signup
+        </Button>
+      </Box>
     </ThemeProvider>
   )
 }

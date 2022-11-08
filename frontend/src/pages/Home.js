@@ -7,15 +7,6 @@ import Header from "../components/Header"
 import Theme from "../components/Theme"
 
 const Home = () => {
-  let navigate = useNavigate(); 
-  const loginPage = () =>{ 
-    let path = `login`; 
-    navigate(path);
-  }
-  const signupPage = () =>{ 
-    let path = `signup`; 
-    navigate(path);
-  }
   return (
     <ThemeProvider theme={Theme}>
       <Box
@@ -28,35 +19,6 @@ const Home = () => {
           height: "100vh"
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "top",
-            flexDirection: "row",
-            gap: "25px",
-            height: "100vh"
-          }}
-        >
-          <Box
-            component="img"
-            sx={{
-              height: 90,
-              width: 250
-            }}
-            src="https://miraris.do.am/resource/logo.png"
-          />
-          <Button color="primary"
-            onClick={loginPage}
-              >
-              Login
-            </Button>
-            <Button color="primary"
-            onClick={signupPage}
-              >
-              Signup
-            </Button>
-        </Box>
         <Header></Header>
         <Typography variant="introduction">
           Miraris Interactive is a team of creators, seeking ways to make their
