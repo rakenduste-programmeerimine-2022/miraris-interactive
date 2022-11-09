@@ -21,7 +21,6 @@ const News = () => {
           height: "100vh"
         }}
       >
-        <Typography>Banner</Typography>
         <Header></Header>
         <Typography>All news</Typography>
         <List

@@ -7,14 +7,14 @@ import Header from "../components/Header"
 import Theme from "../components/Theme"
 
 const Home = () => {
-  let navigate = useNavigate(); 
-  const loginPage = () =>{ 
-    let path = `login`; 
-    navigate(path);
+  const navigate = useNavigate()
+  const project1 = () => {
+    let path = "/projects/project"
+    navigate(path)
   }
-  const signupPage = () =>{ 
-    let path = `signup`; 
-    navigate(path);
+  const project2 = () => {
+    let path = "/projects/project"
+    navigate(path)
   }
   return (
     <ThemeProvider theme={Theme}>
@@ -25,38 +25,10 @@ const Home = () => {
           justifyContent: "top",
           flexDirection: "column",
           gap: "25px",
-          height: "100vh"
+          height: "100vh",
+          width: "100%"
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "top",
-            flexDirection: "row",
-            gap: "25px",
-            height: "100vh"
-          }}
-        >
-          <Box
-            component="img"
-            sx={{
-              height: 90,
-              width: 250
-            }}
-            src="https://miraris.do.am/resource/logo.png"
-          />
-          <Button color="primary"
-            onClick={loginPage}
-              >
-              Login
-            </Button>
-            <Button color="primary"
-            onClick={signupPage}
-              >
-              Signup
-            </Button>
-        </Box>
         <Header></Header>
         <Typography variant="introduction">
           Miraris Interactive is a team of creators, seeking ways to make their
@@ -67,7 +39,19 @@ const Home = () => {
           creators from different nations, Miraris is purely about the games as
           pieces of art, not products to sell.
         </Typography>
-        <Typography>Image slider</Typography>
+        <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "top",
+              flexDirection: "row",
+              gap: "25px",
+              height: "100vh",
+              width: "10vh"
+            }}
+        >
+          <Typography>Image Slider</Typography>
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -79,7 +63,30 @@ const Home = () => {
           }}
         >
           <Typography>News</Typography>
-          <Typography>Buttons</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "top",
+              flexDirection: "column",
+              gap: "25px",
+              height: "100vh",
+              width: "100vh"
+            }}
+          >
+            <Button
+              variant="projectButton"
+              onClick={project1}
+            >
+              Painted Blood
+            </Button>
+            <Button
+              color="primary"
+              onClick={project2}
+            >
+              NatArc
+            </Button>
+          </Box>
         </Box>
       </Box>
     </ThemeProvider>
