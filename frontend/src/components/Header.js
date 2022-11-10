@@ -10,8 +10,17 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import Theme from "./Theme"
 import { ThemeProvider } from "@mui/material/styles"
+import { useLogout } from "../hooks/useLogout"
+import { useAuthContext } from "../hooks/useAuthContext"
 
 export default function Header() {
+  const { logout } = useLogout()
+  const { user } = useAuthContext()
+
+  const handleClick = () => {
+    logout()
+  }
+
   const navigate = useNavigate()
   const loginPage = () => {
     let path = "/login"
@@ -57,18 +66,34 @@ export default function Header() {
           }}
           src="https://miraris.do.am/resource/logo.png"
         />
-        <Button
-          color="primary"
-          onClick={loginPage}
-        >
-          Login
-        </Button>
-        <Button
-          color="primary"
-          onClick={signupPage}
-        >
-          Signup
-        </Button>
+        {!user && (
+          <Box>
+            <Button
+              sx={{ marginRight: "10px" }}
+              color="primary"
+              onClick={loginPage}
+            >
+              Login
+            </Button>
+            <Button
+              color="primary"
+              onClick={signupPage}
+            >
+              Signup
+            </Button>
+          </Box>
+        )}
+        {user && (
+          <Box>
+            <Typography>{user.name}</Typography>
+            <Button
+              color="primary"
+              onClick={handleClick}
+            >
+              Log out
+            </Button>
+          </Box>
+        )}
       </Box>
       <AppBar
         position="sticky"
