@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
+import { useAuthContext } from "./hooks/useAuthContext"
 import "./App.css"
 import Home from "./pages/Home"
 import News from "./pages/News"
@@ -11,6 +12,8 @@ import Signup from "./pages/Signup"
 import Project from "./pages/Project"
 
 export default function App() {
+  const { user } = useAuthContext()
+
   return (
     <BrowserRouter>
       <Routes>
@@ -44,11 +47,11 @@ export default function App() {
         />
         <Route
           path="/login"
-          element={<Login />}
+          element={!user ? <Login /> : <Navigate to="/" />}
         />
         <Route
           path="/signup"
-          element={<Signup />}
+          element={!user ? <Signup /> : <Navigate to="/" />}
         />
       </Routes>
     </BrowserRouter>
