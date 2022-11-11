@@ -1,10 +1,13 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "../App.css"
-import { Box, Typography, Button } from "@mui/material"
+import { Paper, Box, Typography, Button } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
+import Carousel from "react-material-ui-carousel"
 import Header from "../components/Header"
 import Theme from "../components/Theme"
+import projectImage1 from "../images/pb.jpg"
+import projectImage2 from "../images/natarc.jpg"
 
 const Home = () => {
   const navigate = useNavigate()
@@ -16,6 +19,7 @@ const Home = () => {
     let path = "/projects/project"
     navigate(path)
   }
+
   return (
     <ThemeProvider theme={Theme}>
       <Box
@@ -25,7 +29,7 @@ const Home = () => {
           justifyContent: "top",
           flexDirection: "column",
           gap: "25px",
-          height: "100vh",
+          height: "10vh",
           width: "100%"
         }}
       >
@@ -40,17 +44,38 @@ const Home = () => {
           pieces of art, not products to sell.
         </Typography>
         <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "top",
-              flexDirection: "row",
-              gap: "25px",
-              height: "100vh",
-              width: "10vh"
-            }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "top",
+            flexDirection: "row",
+            height: "500px"
+          }}
         >
-          <Typography>Image Slider</Typography>
+          <Carousel
+            sx={{
+              alignContent: "center",
+              width: "1024px",
+              height: "384px"
+            }}
+          >
+            <Box
+          component="img"
+          sx={{
+            height: "50%",
+            width: "100%"
+          }}
+          src={projectImage1}
+        />
+         <Box
+          component="img"
+          sx={{
+            height: "50%",
+            width: "100%"
+          }}
+          src={projectImage2}
+        />
+          </Carousel>
         </Box>
         <Box
           sx={{

@@ -34,7 +34,8 @@ const Login = () => {
           justifyContent: "top",
           flexDirection: "column",
           gap: "25px",
-          height: "100vh"
+          height: "10vh",
+          width: "100%"
         }}
       >
         <Header></Header>

@@ -18,7 +18,7 @@ const News = () => {
           justifyContent: "top",
           flexDirection: "column",
           gap: "25px",
-          height: "100vh"
+          height: "10vh"
         }}
       >
         <Header></Header>

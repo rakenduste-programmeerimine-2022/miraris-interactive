@@ -12,6 +12,7 @@ import Theme from "./Theme"
 import { ThemeProvider } from "@mui/material/styles"
 import { useLogout } from "../hooks/useLogout"
 import { useAuthContext } from "../hooks/useAuthContext"
+import Logo from "../images/logo.png"
 
 export default function Header() {
   const { logout } = useLogout()
@@ -64,7 +65,7 @@ export default function Header() {
             height: 90,
             width: 250
           }}
-          src="https://miraris.do.am/resource/logo.png"
+          src={Logo}
         />
         {!user && (
           <Box>
