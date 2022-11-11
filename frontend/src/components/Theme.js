@@ -1,10 +1,10 @@
 import { createTheme } from "@mui/material/styles"
 
 const Theme = createTheme({
-  components:{
+  components: {
     MuiButton: {
-      styleOverrides:{
-        root:{
+      styleOverrides: {
+        root: {
           color: "#ba9120",
           boxShadow: "20px",
           border: "1px solid #a17c16",

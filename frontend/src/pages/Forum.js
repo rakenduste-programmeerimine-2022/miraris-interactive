@@ -18,11 +18,11 @@ const Forum = () => {
           justifyContent: "top",
           flexDirection: "column",
           gap: "25px",
-          height: "100vh"
+          height: "10vh"
         }}
       >
         <Header></Header>
-        <Typography>Our projects</Typography>
+        <Typography>Forum</Typography>
         <List>
           <ListItem>
             <ListItemText
