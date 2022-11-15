@@ -18,10 +18,7 @@ const Portfolio = () => {
     console.log("request")
     await projectList(id)
   }
-  useEffect(() => {
-    loadData()
-  })
-
+  loadData()
   return (
     <ThemeProvider theme={Theme}>
       <Box
