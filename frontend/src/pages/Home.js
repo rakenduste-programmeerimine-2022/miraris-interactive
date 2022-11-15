@@ -49,32 +49,32 @@ const Home = () => {
             alignItems: "center",
             justifyContent: "top",
             flexDirection: "row",
-            height: "500px"
+            height: "1500px"
           }}
         >
           <Carousel
             sx={{
               alignContent: "center",
               width: "1024px",
-              height: "384px"
+              height: "1384px"
             }}
           >
             <Box
-          component="img"
-          sx={{
-            height: "50%",
-            width: "100%"
-          }}
-          src={projectImage1}
-        />
-         <Box
-          component="img"
-          sx={{
-            height: "50%",
-            width: "100%"
-          }}
-          src={projectImage2}
-        />
+              component="img"
+              sx={{
+                height: "50%",
+                width: "100%"
+              }}
+              src={projectImage1}
+            />
+            <Box
+              component="img"
+              sx={{
+                height: "50%",
+                width: "100%"
+              }}
+              src={projectImage2}
+            />
           </Carousel>
         </Box>
         <Box
