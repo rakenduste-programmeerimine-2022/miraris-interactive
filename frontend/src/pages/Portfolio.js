@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "../App.css"
+import { useProjects } from "../hooks/useProjects"
 import { Box, Typography } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
 import List from "@mui/material/List"
@@ -9,6 +10,18 @@ import Header from "../components/Header"
 import Theme from "../components/Theme"
 
 const Portfolio = () => {
+  console.log("rendering")
+  const { projectList, isLoading, error } = useProjects()
+  const id = "63726bb3f5ddd84483f82406"
+
+  const loadData = async () => {
+    console.log("request")
+    await projectList(id)
+  }
+  useEffect(() => {
+    loadData()
+  })
+
   return (
     <ThemeProvider theme={Theme}>
       <Box
@@ -28,14 +41,14 @@ const Portfolio = () => {
         >
           <ListItem>
             <ListItemText
-              primary="Project 1"
-              secondary="Project 1 description"
+            /*primary={titles[0]}
+              secondary={descriptions[0]}*/
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="Project 2"
-              secondary="Project 2 description"
+            /*primary={titles[1]}
+              secondary={descriptions[1]}*/
             />
           </ListItem>
         </List>
