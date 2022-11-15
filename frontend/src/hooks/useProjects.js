@@ -7,26 +7,34 @@ export const useProjects = () => {
   const data = []
 
   const projectList = async id => {
+    console.log(id)
     /*setIsLoading(true)
     setError(null)*/
 
-    const response = await fetch("http://localhost:8080/api/projects", {
+    fetch("http://localhost:8080/api/projects", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id })
     })
-    const json = await response.json()
+    .then((response) => response.json())
+    .then((result) => {
+      console.log("Success", result)
+    })
+    .catch((error) => {
+      console.log("Error", error)
+    })
+    /*const json = await response.json()
     console.log("here")
     data.push(response.data)
     if (!response.ok) {
       /*setIsLoading(false)
       setError(json.error)*/
-    }
+   /* }
     if (response.ok) {
       data.push(response.data)
       console.log("response ok")
-    }
+    }*/
   }
-  console.log(data)
+
   return { projectList }
 }

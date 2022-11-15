@@ -14,11 +14,9 @@ const Portfolio = () => {
   const { projectList, isLoading, error } = useProjects()
   const id = "63726bb3f5ddd84483f82406"
 
-  const loadData = async () => {
-    console.log("request")
-    await projectList(id)
-  }
-  loadData()
+  useEffect(() => {
+    projectList(id)
+  }, [])
   return (
     <ThemeProvider theme={Theme}>
       <Box
