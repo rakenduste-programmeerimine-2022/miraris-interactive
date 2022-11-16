@@ -1,22 +1,27 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import "../App.css"
-import { useProjects } from "../hooks/useProjects"
 import { Box, Typography } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
 import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemText from "@mui/material/ListItemText"
 import Header from "../components/Header"
 import Theme from "../components/Theme"
+import { useProjectsContext } from "../hooks/useProjectsContext"
+import ProjectDetails from "../components/ProjectDetails"
 
 const Portfolio = () => {
-  console.log("rendering")
-  const { projectList, isLoading, error } = useProjects()
-  const id = "63726bb3f5ddd84483f82406"
+  const { projects, dispatch } = useProjectsContext()
 
   useEffect(() => {
-    projectList(id)
-  }, [])
+    const fetchProjects = async () => {
+      const response = await fetch("http://localhost:8080/api/projects")
+      const json = await response.json()
+
+      if (response.ok) {
+        dispatch({ type: "SET_PROJECTS", payload: json })
+      }
+    }
+    fetchProjects()
+  }, [dispatch])
   return (
     <ThemeProvider theme={Theme}>
       <Box
@@ -34,18 +39,13 @@ const Portfolio = () => {
         <List
           sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
         >
-          <ListItem>
-            <ListItemText
-            /*primary={titles[0]}
-              secondary={descriptions[0]}*/
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemText
-            /*primary={titles[1]}
-              secondary={descriptions[1]}*/
-            />
-          </ListItem>
+          {projects &&
+            projects.map(project => (
+              <ProjectDetails
+                key={project._id}
+                project={project}
+              />
+            ))}
         </List>
       </Box>
     </ThemeProvider>

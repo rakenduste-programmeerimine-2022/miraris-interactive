@@ -2,10 +2,6 @@ const mongoose = require("mongoose")
 
 const projectSchema = mongoose.Schema(
   {
-    id: {
-      type: String,
-      unique: true
-    },
     title: {
       type: String
     },
