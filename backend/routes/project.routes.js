@@ -1,8 +1,7 @@
 const express = require("express")
 const router = express.Router()
-const { findProjects } = require("../controllers/project.controller")
-const proxyMiddleware = require("../middleware/proxy.middleware")
+const { getProjects } = require("../controllers/project.controller")
 
-router.post("/project", proxyMiddleware, findProjects)
+router.get("/", getProjects)
 
 module.exports = router
