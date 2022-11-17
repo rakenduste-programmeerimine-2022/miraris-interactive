@@ -8,6 +8,10 @@ export const projectsReducer = (state, action) => {
       return {
         projects: action.payload
       }
+    case "SET_INDIVIDUAL_PROJECT":
+      return {
+        project: action.payload
+      }
     default:
       return state
   }
