@@ -1,6 +1,6 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "../App.css"
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, Button } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
 import List from "@mui/material/List"
 import Header from "../components/Header"
@@ -10,6 +10,7 @@ import ProjectDetails from "../components/ProjectDetails"
 
 const Portfolio = () => {
   const { projects, dispatch } = useProjectsContext()
+  const [sortReverse, setSortReverse] = useState(false)
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -22,6 +23,10 @@ const Portfolio = () => {
     }
     fetchProjects()
   }, [dispatch])
+
+  const handleSort = () => {
+    setSortReverse(current => !current)
+  }
   return (
     <ThemeProvider theme={Theme}>
       <Box
@@ -36,11 +41,26 @@ const Portfolio = () => {
       >
         <Header></Header>
         <Typography>Our projects</Typography>
+        <Button
+          color="primary"
+          onClick={handleSort}
+        >
+          Sort by date
+        </Button>
         <List
           sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
         >
-          {projects &&
+          {!sortReverse &&
+            projects &&
             projects.map(project => (
+              <ProjectDetails
+                key={project._id}
+                project={project}
+              />
+            ))}
+          {sortReverse &&
+            projects &&
+            [...projects].reverse().map(project => (
               <ProjectDetails
                 key={project._id}
                 project={project}
