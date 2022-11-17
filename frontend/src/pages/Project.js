@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useParams } from "react-router-dom"
 import "../App.css"
 import { ThemeProvider } from "@mui/material/styles"
 import { Box, Typography } from "@mui/material"
@@ -8,11 +9,15 @@ import Header from "../components/Header"
 import Theme from "../components/Theme"
 
 const Project = () => {
+  const params = useParams();
+  const id = JSON.stringify(params.projectId)
+
+  console.log(id)
+
   const { project, dispatch } = useProjectsContext()
 
   useEffect(() => {
-    console.log("here")
-    const fetchProjects = async () => {
+    const fetchProject = async () => {
       const response = await fetch("http://localhost:8080/api/projects")
       const json = await response.json()
 
@@ -20,7 +25,7 @@ const Project = () => {
         dispatch({ type: "SET_PROJECTS", payload: json })
       }
     }
-    fetchProjects()
+    fetchProject()
   }, [dispatch])
   return (
     <ThemeProvider theme={Theme}>
@@ -35,14 +40,12 @@ const Project = () => {
         }}
       >
         <Header></Header>
-        <Typography>
-          {project &&
-            <ProjectContent
-              key={project._id}
-              project={project}
-            />
-          }
-        </Typography>
+        {project &&
+              <ProjectContent
+                key={id}
+                project={project}
+              />
+        }
       </Box>
     </ThemeProvider>
   )

@@ -5,9 +5,10 @@ import { Button } from "@mui/material"
 import { useProjectsContext } from "../hooks/useProjectsContext"
 
 const ProjectDetails = ({ project }) => {
+  console.log("here")
   const { dispatch } = useProjectsContext()
-  const title = project.title
-  console.log(title)
+  const id = project._id
+  console.log(id)
 
   return (
     <ListItem>
@@ -18,7 +19,7 @@ const ProjectDetails = ({ project }) => {
       <Button
         onClick={e => {
           e.preventDefault()
-          window.location.href = "projects/" + title
+          window.location.href = "projects/project/" + id
         }}
       >
         Read more

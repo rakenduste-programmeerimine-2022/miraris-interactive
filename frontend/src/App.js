@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
+import { BrowserRouter, Route, Routes, Navigate, useParams } from "react-router-dom"
 import { useAuthContext } from "./hooks/useAuthContext"
 import "./App.css"
 import Home from "./pages/Home"
@@ -34,7 +34,7 @@ export default function App() {
           element={<Portfolio />}
         />
         <Route
-          path="/projects/project"
+          path="/projects/project/:projectId"
           element={<Project />}
         />
         <Route
