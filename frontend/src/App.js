@@ -34,7 +34,7 @@ export default function App() {
           element={<Portfolio />}
         />
         <Route
-          path="/projects/project"
+          path="/projects/:id"
           element={<Project />}
         />
         <Route
