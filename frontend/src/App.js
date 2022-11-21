@@ -26,7 +26,7 @@ export default function App() {
           element={<News />}
         />
         <Route
-          path="/news/newspage"
+          path="/news/newspage/:newsId"
           element={<NewsPage />}
         />
         <Route

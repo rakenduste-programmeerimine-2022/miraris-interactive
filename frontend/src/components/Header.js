@@ -7,6 +7,7 @@ import {
   Button
 } from "@mui/material"
 import React from "react"
+import "../App.css"
 import { useNavigate } from "react-router-dom"
 import Theme from "./Theme"
 import { ThemeProvider } from "@mui/material/styles"
@@ -49,16 +50,7 @@ export default function Header() {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "top",
-          flexDirection: "row",
-          gap: "25px",
-          height: "100vh"
-        }}
-      >
+      <Box className="mainContainer">
         <Box
           component="img"
           sx={{
