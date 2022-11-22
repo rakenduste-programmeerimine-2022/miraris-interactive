@@ -41,3 +41,13 @@
   justify-content: center;
   padding: "250px";
 }
+
+.news {
+  display: "flex";
+  align-items: "center";
+  justify-content: "top";
+  flex-direction: "column";
+  gap: "25px";
+  height: "10vh";
+  background-color: rgb(255, 248, 242);
+}

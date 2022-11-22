@@ -11,7 +11,7 @@ import Header from "../components/Header"
 import Theme from "../components/Theme"
 
 const News = () => {
-  const { news, dispatch } = useProjectsContext()
+  //const { news, dispatch } = useNewsContext()
 
   return (
     <ThemeProvider theme={Theme}>
