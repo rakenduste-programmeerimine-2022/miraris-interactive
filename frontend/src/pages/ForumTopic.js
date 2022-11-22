@@ -13,7 +13,16 @@ import Theme from "../components/Theme"
 const ForumTopic = () => {
   return (
     <ThemeProvider theme={Theme}>
-      <Box className="mainContainer">
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "top",
+          flexDirection: "column",
+          gap: "25px",
+          height: "10vh"
+        }}
+      >
         <Typography>Banner</Typography>
         <Header></Header>
         <Typography>Topic name</Typography>

@@ -22,7 +22,17 @@ const Home = () => {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Box className="mainContainer">
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "top",
+          flexDirection: "column",
+          gap: "25px",
+          height: "10vh",
+          width: "100%"
+        }}
+      >
         <Header></Header>
         <Typography variant="introduction">
           Miraris Interactive is a team of creators, seeking ways to make their
@@ -33,23 +43,25 @@ const Home = () => {
           creators from different nations, Miraris is purely about the games as
           pieces of art, not products to sell.
         </Typography>
-        <Box className="sliderContainer">
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "top",
+            flexDirection: "row",
+            height: "1500px"
+          }}
+        >
           <Carousel
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "top",
-              alignItems: "center",
-              width: "512px",
-              height: "692px",
-              padding: "20px",
-              paddingLeft: "460px"
+              alignContent: "center",
+              width: "1024px",
+              height: "1384px"
             }}
           >
             <Box
               component="img"
               sx={{
-                display: "flex",
                 height: "50%",
                 width: "100%"
               }}
@@ -58,7 +70,6 @@ const Home = () => {
             <Box
               component="img"
               sx={{
-                display: "flex",
                 height: "50%",
                 width: "100%"
               }}
@@ -66,7 +77,16 @@ const Home = () => {
             />
           </Carousel>
         </Box>
-        <Box className="contentContainer">
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "top",
+            flexDirection: "row",
+            gap: "25px",
+            height: "100vh"
+          }}
+        >
           <Typography>News</Typography>
           <Box sx={{ display: "flex", flexDirection: "column", maxWidth: "150px", padding: "25px", gap: "10px", alignItems: "right" }}>
             <Button
