@@ -68,19 +68,7 @@ const Home = () => {
         </Box>
         <Box className="contentContainer">
           <Typography>News</Typography>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "top",
-              justifyItems: "center",
-              flexDirection: "column",
-              gap: "25px",
-              height: "100vh",
-              width: "100vh",
-              backgroundColor: "aliceblue"
-            }}
-          >
+          <Box sx={{ display: "flex", flexDirection: "column", maxWidth: "150px", padding: "25px", gap: "10px", alignItems: "right" }}>
             <Button
               color="primary"
               onClick={project1}
