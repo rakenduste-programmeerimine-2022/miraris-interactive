@@ -22,17 +22,7 @@ const Home = () => {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "top",
-          flexDirection: "column",
-          gap: "25px",
-          height: "10vh",
-          width: "100%"
-        }}
-      >
+      <Box className="mainContainer">
         <Header></Header>
         <Typography variant="introduction">
           Miraris Interactive is a team of creators, seeking ways to make their
@@ -43,20 +33,13 @@ const Home = () => {
           creators from different nations, Miraris is purely about the games as
           pieces of art, not products to sell.
         </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "top",
-            flexDirection: "row",
-            height: "1500px"
-          }}
-        >
+        <Box className="sliderContainer">
           <Carousel
             sx={{
               alignContent: "center",
-              width: "1024px",
-              height: "1384px"
+              width: "512px",
+              height: "692px",
+              paddingLeft: "32vw"
             }}
           >
             <Box
@@ -77,30 +60,11 @@ const Home = () => {
             />
           </Carousel>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "top",
-            flexDirection: "row",
-            gap: "25px",
-            height: "100vh"
-          }}
-        >
+        <Box className="contentContainer">
           <Typography>News</Typography>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "top",
-              flexDirection: "column",
-              gap: "25px",
-              height: "100vh",
-              width: "100vh"
-            }}
-          >
+          <Box sx={{ display: "flex", flexDirection: "column", maxWidth: "150px", padding: "25px", gap: "10px", alignItems: "right" }}>
             <Button
-              variant="projectButton"
+              color="primary"
               onClick={project1}
             >
               Painted Blood

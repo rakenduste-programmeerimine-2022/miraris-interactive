@@ -5,9 +5,10 @@ const Theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: "#ba9120",
+          color: "#96792a",
+          backgroundColor: "#dcb341",
           boxShadow: "20px",
-          border: "1px solid #a17c16",
+          border: "2px solid #a17c16",
           fontSize: "14px",
           fontWeight: "bold"
         }
@@ -31,7 +32,8 @@ const Theme = createTheme({
     navbar: {
       color: "white"
     }
-  }
+  },
+  
 })
 
 export default Theme

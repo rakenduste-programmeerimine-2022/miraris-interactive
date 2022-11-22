@@ -5,10 +5,14 @@ import { Box, Typography } from "@mui/material"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
+import { useNewsContext } from "../hooks/useNewsContext"
+import NewsDetails from "../components/NewsDetails"
 import Header from "../components/Header"
 import Theme from "../components/Theme"
 
 const News = () => {
+  //const { news, dispatch } = useNewsContext()
+
   return (
     <ThemeProvider theme={Theme}>
       <Box
