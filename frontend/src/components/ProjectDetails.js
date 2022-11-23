@@ -2,11 +2,8 @@ import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
 import { Button } from "@mui/material"
 import { useNavigate } from "react-router-dom"
-import { useProjectsContext } from "../hooks/useProjectsContext"
 
 const ProjectDetails = ({ project }) => {
-  const { dispatch } = useProjectsContext()
-
   const navigate = useNavigate()
   const detailsPage = () => {
     let path = "/projects/" + project._id
