@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "../App.css"
 import { ThemeProvider } from "@mui/material/styles"
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, Button } from "@mui/material"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
@@ -21,17 +21,19 @@ const News = () => {
           <Header></Header>
           <Typography>All news</Typography>
           <List>
-            <ListItem>
+            <ListItem className="newsItem">
               <ListItemText
                 primary="News 1"
                 secondary="News 1 contents"
               />
+              <Button>Read more</Button>
             </ListItem>
-            <ListItem>
+            <ListItem className="newsItem">
               <ListItemText
                 primary="News 2"
                 secondary="News 2 contents"
               />
+              <Button>Read more</Button>
             </ListItem>
           </List>
         </Box>

@@ -73,6 +73,10 @@
   width: 100%;
 }
 
+.newsItem {
+  justify-content: space-between;
+}
+
 .footer {
   display: flex;
   flex-direction: row;
