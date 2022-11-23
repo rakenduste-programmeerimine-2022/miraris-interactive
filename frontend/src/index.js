@@ -5,13 +5,16 @@ import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import { AuthContextProvider } from "./context/AuthContext"
 import { ProjectsContextProvider } from "./context/ProjectContext"
+import { NewsContextProvider } from "./context/NewsContext"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
       <ProjectsContextProvider>
-        <App />
+        <NewsContextProvider>
+          <App />
+        </NewsContextProvider>
       </ProjectsContextProvider>
     </AuthContextProvider>
   </React.StrictMode>

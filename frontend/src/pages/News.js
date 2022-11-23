@@ -1,42 +1,62 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "../App.css"
-import { ThemeProvider } from "@mui/material/styles"
 import { Box, Typography, Button } from "@mui/material"
+import { ThemeProvider } from "@mui/material/styles"
 import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemText from "@mui/material/ListItemText"
-import { useNewsContext } from "../hooks/useNewsContext"
-import NewsDetails from "../components/NewsDetails"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Theme from "../components/Theme"
+import { useNewsContext } from "../hooks/useNewsContext"
+import NewsDetails from "../components/NewsDetails"
 
 const News = () => {
-  //const { news, dispatch } = useNewsContext()
+  const { news, dispatch } = useNewsContext()
+  const [sortReverse, setSortReverse] = useState(false)
 
+  useEffect(() => {
+    const fetchNews = async () => {
+      const response = await fetch("http://localhost:8080/api/news")
+      const json = await response.json()
+
+      if (response.ok) {
+        dispatch({ type: "SET_NEWS", payload: json })
+      }
+    }
+    fetchNews()
+  }, [dispatch])
+
+  const handleSort = () => {
+    setSortReverse(current => !current)
+  }
   return (
     <ThemeProvider theme={Theme}>
       <Box className="mainContainer">
-        <Box className="news">
-          <Header></Header>
-          <Typography>All news</Typography>
-          <List>
-            <ListItem className="newsItem">
-              <ListItemText
-                primary="News 1"
-                secondary="News 1 contents"
+        <Header></Header>
+        <Typography>All news</Typography>
+        <Button
+          color="primary"
+          onClick={handleSort}
+        >
+          Sort by date
+        </Button>
+        <List className="contentList">
+          {!sortReverse &&
+            news &&
+            news.map(newsElement => (
+              <NewsDetails
+                key={newsElement._id}
+                newsElement={newsElement}
               />
-              <Button>Read more</Button>
-            </ListItem>
-            <ListItem className="newsItem">
-              <ListItemText
-                primary="News 2"
-                secondary="News 2 contents"
+            ))}
+          {sortReverse &&
+            news &&
+            [...news].reverse().map(newsElement => (
+              <NewsDetails
+                key={newsElement._id}
+                newsElement={newsElement}
               />
-              <Button>Read more</Button>
-            </ListItem>
-          </List>
-        </Box>
+            ))}
+        </List>
         <Footer></Footer>
       </Box>
     </ThemeProvider>
