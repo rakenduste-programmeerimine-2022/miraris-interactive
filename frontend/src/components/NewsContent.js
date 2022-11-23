@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material"
-import { useProjectsContext } from "../hooks/useProjectsContext"
+import { useNewsContext } from "../hooks/useNewsContext"
 
-const ProjectContent = ({ project }) => {
-  const { dispatch } = useProjectsContext()
+const NewsContent = ({ newsElement }) => {
+  const { dispatch } = useNewsContext()
 
   return (
     <>
@@ -13,22 +13,22 @@ const ProjectContent = ({ project }) => {
           maxWidth: 720
         }}
       >
-        {project.title}
+        {newsElement.header}
       </Typography>
       <Typography
         align="justify"
         sx={{ width: "100%", maxWidth: 720, whiteSpace: "pre-line" }}
       >
-        {project.description}
+        {newsElement.introduction}
       </Typography>
       <Typography
         align="justify"
         sx={{ width: "100%", maxWidth: 720, whiteSpace: "pre-line" }}
       >
-        {project.content}
+        {newsElement.body}
       </Typography>
     </>
   )
 }
 
-export default ProjectContent
+export default NewsContent

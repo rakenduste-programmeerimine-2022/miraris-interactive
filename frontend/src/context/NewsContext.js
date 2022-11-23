@@ -2,11 +2,15 @@ import { createContext, useReducer } from "react"
 
 export const NewsContext = createContext()
 
-export const newssReducer = (state, action) => {
+export const newsReducer = (state, action) => {
   switch (action.type) {
     case "SET_NEWS":
       return {
         news: action.payload
+      }
+    case "SET_NEWS_BY_ID":
+      return {
+        newsElement: action.payload
       }
     default:
       return state
