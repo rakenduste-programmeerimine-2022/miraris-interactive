@@ -6,39 +6,29 @@ import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 import Theme from "../components/Theme"
 
 const Forum = () => {
   return (
     <ThemeProvider theme={Theme}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "top",
-          flexDirection: "column",
-          gap: "25px",
-          height: "10vh"
-        }}
-      >
+      <Box className="mainContainer">
         <Header></Header>
         <Typography>Forum</Typography>
-        <List>
-          <ListItem>
+        <List className="contentList">
+        <ListItem className="forumCategory">
             <ListItemText
               primary="Category 1"
               secondary="Category 1 description"
             />
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              <ListItem>
+            <List>
+              <ListItem className="forumTopic">
                 <ListItemText
                   primary="Topic 1"
                   secondary="Topic 1 description"
                 />
               </ListItem>
-              <ListItem>
+              <ListItem className="forumTopic">
                 <ListItemText
                   primary="Topic 2"
                   secondary="Topic 2 description"
@@ -46,21 +36,19 @@ const Forum = () => {
               </ListItem>
             </List>
           </ListItem>
-          <ListItem>
+          <ListItem className="forumCategory">
             <ListItemText
               primary="Category 2"
               secondary="Category 2 description"
             />
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              <ListItem>
+            <List>
+              <ListItem className="forumTopic">
                 <ListItemText
                   primary="Topic 1"
                   secondary="Topic 1 description"
                 />
               </ListItem>
-              <ListItem>
+              <ListItem className="forumTopic">
                 <ListItemText
                   primary="Topic 2"
                   secondary="Topic 2 description"
@@ -69,6 +57,7 @@ const Forum = () => {
             </List>
           </ListItem>
         </List>
+        <Footer></Footer>
       </Box>
     </ThemeProvider>
   )

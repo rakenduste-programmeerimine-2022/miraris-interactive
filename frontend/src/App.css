@@ -1,53 +1,86 @@
 .mainContainer {
-  background-color: rgba(208, 181, 145, 0.893);
-  display: "flex";
+  background-color: rgba(242, 239, 233, 0.893);
+  display: flex;
   text-align: center;
-  align-items: "center";
-  justify-content: "top";
-  flex-direction: "column";
-  gap: "25px";
-  height: "10vh";
-  width: "100%"
+  align-items: center;
+  justify-content: top;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%
 }
 
 .sliderContainer {
-  background-color: aliceblue;
-  display: "flex";
-  padding-left: "30px";
+  background-color: rgb(137, 93, 17);
+  display: flex;
   text-align: center;
-  align-items: "center";
-  justify-content: "top";
-  flex-direction: "row";
-  height: "1500px"
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+  width: 100%;
+  padding: 10px;
+  border: 3px solid rgb(34, 20, 4);
 }
 
 .contentContainer {
   background-color: rgb(251, 251, 251);
-  display: "flex";
-  align-items: "center";
-  justify-content: "top";
-  flex-direction: "row";
-  height: "100vh";
-  width: "70%";
-  padding: "100px";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 100vh;
+  width: 90%;
+  padding: 10px;
 }
 
 .contentList {
-  width: "50%" !important ;
+  width: 50%;
   max-width: 360;
-  background-color: "black";
-  display: "flex";
-  flex-direction: "column" !important;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: "250px";
+  padding: 250px;
+}
+
+.forumList {
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.forumCategory {
+  justify-content: left;
+  border-bottom: 1px solid black;
+}
+
+.forumTopic {
+  justify-content: right;
+  border: 1px solid black;
+  width: 50%;
 }
 
 .news {
-  display: "flex";
-  align-items: "center";
-  justify-content: "top";
-  flex-direction: "column";
-  gap: "25px";
-  height: "10vh";
-  background-color: rgb(255, 248, 242);
+  display: flex;
+  align-items: center;
+  justify-content: top;
+  flex-direction: column;
+  background-color: rgb(253, 253, 253);
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 245, 240);
+  font-size: 10px;
+  width: 100%;
+  height: 10vh;
+  background-color: black;
 }

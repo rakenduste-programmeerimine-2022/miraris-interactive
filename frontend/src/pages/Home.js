@@ -5,6 +5,7 @@ import { Paper, Box, Typography, Button } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
 import Carousel from "react-material-ui-carousel"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 import Theme from "../components/Theme"
 import projectImage1 from "../images/pb.jpg"
 import projectImage2 from "../images/natarc.jpg"
@@ -38,23 +39,22 @@ const Home = () => {
             sx={{
               alignContent: "center",
               width: "512px",
-              height: "692px",
-              paddingLeft: "32vw"
+              height: "384px",
             }}
           >
             <Box
               component="img"
               sx={{
-                height: "50%",
-                width: "100%"
+                width: "512px",
+                height: "384px"
               }}
               src={projectImage1}
             />
             <Box
               component="img"
               sx={{
-                height: "50%",
-                width: "100%"
+                width: "512px",
+                height: "384px"
               }}
               src={projectImage2}
             />
@@ -77,6 +77,7 @@ const Home = () => {
             </Button>
           </Box>
         </Box>
+        <Footer></Footer>
       </Box>
     </ThemeProvider>
   )

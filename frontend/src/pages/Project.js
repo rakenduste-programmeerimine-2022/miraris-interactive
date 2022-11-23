@@ -4,6 +4,7 @@ import "../App.css"
 import { Box } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 import Theme from "../components/Theme"
 import { useProjectsContext } from "../hooks/useProjectsContext"
 import ProjectContent from "../components/ProjectContent"
@@ -25,16 +26,7 @@ const Project = () => {
   }, [dispatch])
   return (
     <ThemeProvider theme={Theme}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "top",
-          flexDirection: "column",
-          gap: "25px",
-          height: "10vh"
-        }}
-      >
+      <Box className="mainContainer">
         <Header></Header>
         {project && (
           <ProjectContent
@@ -42,6 +34,7 @@ const Project = () => {
             project={project}
           />
         )}
+        <Footer></Footer>
       </Box>
     </ThemeProvider>
   )

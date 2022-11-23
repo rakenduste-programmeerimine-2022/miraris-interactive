@@ -4,6 +4,7 @@ import { Box, Typography, Button } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
 import List from "@mui/material/List"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 import Theme from "../components/Theme"
 import { useProjectsContext } from "../hooks/useProjectsContext"
 import ProjectDetails from "../components/ProjectDetails"
@@ -29,16 +30,7 @@ const Portfolio = () => {
   }
   return (
     <ThemeProvider theme={Theme}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "top",
-          flexDirection: "column",
-          gap: "25px",
-          height: "10vh"
-        }}
-      >
+      <Box className="mainContainer">
         <Header></Header>
         <Typography>Our projects</Typography>
         <Button
@@ -47,9 +39,7 @@ const Portfolio = () => {
         >
           Sort by date
         </Button>
-        <List
-          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-        >
+        <List className="contentList">
           {!sortReverse &&
             projects &&
             projects.map(project => (
@@ -67,6 +57,7 @@ const Portfolio = () => {
               />
             ))}
         </List>
+        <Footer></Footer>
       </Box>
     </ThemeProvider>
   )
