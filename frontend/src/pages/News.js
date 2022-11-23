@@ -30,7 +30,7 @@ const News = () => {
   }
   return (
     <ThemeProvider theme={Theme}>
-      <Box className="mainContainer">
+      <Box className="news">
         <Header></Header>
         <Typography>All news</Typography>
         <Button
@@ -39,7 +39,7 @@ const News = () => {
         >
           Sort by date
         </Button>
-        <List className="contentList">
+        <List>
           {!sortReverse &&
             news &&
             news.map(newsElement => (

@@ -10,7 +10,7 @@ const NewsDetails = ({ newsElement }) => {
     navigate(path)
   }
   return (
-    <ListItem>
+    <ListItem className="newsItem">
       <ListItemText
         primary={newsElement.header}
         secondary={newsElement.introduction}
