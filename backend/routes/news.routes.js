@@ -3,6 +3,6 @@ const router = express.Router()
 const { getNews, getNewsById } = require("../controllers/news.controller")
 
 router.get("/", getNews)
-router.get("http://localhost:3000/news/newspage", getProjectById)
+router.get("/:id", getNewsById)
 
 module.exports = router
