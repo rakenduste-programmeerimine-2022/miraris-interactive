@@ -1,9 +1,6 @@
 import { Typography } from "@mui/material"
-import { useNewsContext } from "../hooks/useNewsContext"
 
 const NewsContent = ({ newsElement }) => {
-  const { dispatch } = useNewsContext()
-
   return (
     <>
       <Typography

@@ -1,9 +1,6 @@
 import { Typography } from "@mui/material"
-import { useProjectsContext } from "../hooks/useProjectsContext"
 
 const ProjectContent = ({ project }) => {
-  const { dispatch } = useProjectsContext()
-
   return (
     <>
       <Typography

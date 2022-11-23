@@ -1,4 +1,4 @@
-import { Typography, Box } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import "../App.css"
 
 export default function Footer() {
