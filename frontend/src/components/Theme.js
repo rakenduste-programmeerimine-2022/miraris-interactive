@@ -32,8 +32,7 @@ const Theme = createTheme({
     navbar: {
       color: "white"
     }
-  },
-  
+  }
 })
 
 export default Theme

@@ -1,4 +1,10 @@
-import { BrowserRouter, Route, Routes, Navigate, useParams } from "react-router-dom"
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate,
+  useParams
+} from "react-router-dom"
 import { useAuthContext } from "./hooks/useAuthContext"
 import "./App.css"
 import Home from "./pages/Home"
