@@ -2,15 +2,12 @@ const mongoose = require("mongoose")
 
 const newsSchema = mongoose.Schema(
   {
-    id: {
-      type: String
-    },
     header: {
       type: String
     },
     introduction: {
-        type: String
-      },
+      type: String
+    },
     body: {
       type: String
     }

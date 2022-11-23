@@ -16,7 +16,7 @@ const Forum = () => {
         <Header></Header>
         <Typography>Forum</Typography>
         <List className="contentList">
-        <ListItem className="forumCategory">
+          <ListItem className="forumCategory">
             <ListItemText
               primary="Category 1"
               secondary="Category 1 description"

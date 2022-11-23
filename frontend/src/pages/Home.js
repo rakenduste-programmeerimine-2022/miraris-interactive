@@ -39,7 +39,7 @@ const Home = () => {
             sx={{
               alignContent: "center",
               width: "512px",
-              height: "384px",
+              height: "384px"
             }}
           >
             <Box
@@ -62,7 +62,16 @@ const Home = () => {
         </Box>
         <Box className="contentContainer">
           <Typography>News</Typography>
-          <Box sx={{ display: "flex", flexDirection: "column", maxWidth: "150px", padding: "25px", gap: "10px", alignItems: "right" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              maxWidth: "150px",
+              padding: "25px",
+              gap: "10px",
+              alignItems: "right"
+            }}
+          >
             <Button
               color="primary"
               onClick={project1}
