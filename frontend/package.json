@@ -42,6 +42,12 @@
       "unused-imports"
     ],
     "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ],
       "no-duplicate-imports": "error",
       "sort-imports": [
         "error",
