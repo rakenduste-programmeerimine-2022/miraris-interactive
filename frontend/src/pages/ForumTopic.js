@@ -28,7 +28,13 @@ const ForumTopic = () => {
         <Typography>Topic name</Typography>
         <Typography variant="subtitle2">Topic description</Typography>
         <List
-          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper", display: "flex", flexDirection: "column" }}
+          sx={{
+            width: "100%",
+            maxWidth: 360,
+            bgcolor: "background.paper",
+            display: "flex",
+            flexDirection: "column"
+          }}
         >
           <ListItem>
             <ListItemAvatar>

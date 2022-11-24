@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import "../App.css"
 import { Box, Typography } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
@@ -16,7 +16,7 @@ const Forum = () => {
         <Header></Header>
         <Typography>Forum</Typography>
         <List className="contentList">
-        <ListItem className="forumCategory">
+          <ListItem className="forumCategory">
             <ListItemText
               primary="Category 1"
               secondary="Category 1 description"

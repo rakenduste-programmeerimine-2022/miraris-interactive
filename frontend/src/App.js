@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate, useParams } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { useAuthContext } from "./hooks/useAuthContext"
 import "./App.css"
 import Home from "./pages/Home"
@@ -26,7 +26,7 @@ export default function App() {
           element={<News />}
         />
         <Route
-          path="/news/newspage/:newsId"
+          path="/news/:id"
           element={<NewsPage />}
         />
         <Route

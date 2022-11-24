@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material"
 
-const ProjectContent = ({ project }) => {
+const NewsContent = ({ newsElement }) => {
   return (
     <>
       <Typography
@@ -10,22 +10,22 @@ const ProjectContent = ({ project }) => {
           maxWidth: 720
         }}
       >
-        {project.title}
+        {newsElement.header}
       </Typography>
       <Typography
         align="justify"
         sx={{ width: "100%", maxWidth: 720, whiteSpace: "pre-line" }}
       >
-        {project.description}
+        {newsElement.introduction}
       </Typography>
       <Typography
         align="justify"
         sx={{ width: "100%", maxWidth: 720, whiteSpace: "pre-line" }}
       >
-        {project.content}
+        {newsElement.body}
       </Typography>
     </>
   )
 }
 
-export default ProjectContent
+export default NewsContent

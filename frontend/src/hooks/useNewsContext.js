@@ -5,9 +5,7 @@ export const useNewsContext = () => {
   const context = useContext(NewsContext)
 
   if (!context) {
-    throw Error(
-      "useNewsContext must be used inside an NewsContextProvider"
-    )
+    throw Error("useNewsContext must be used inside a NewsContextProvider")
   }
 
   return context

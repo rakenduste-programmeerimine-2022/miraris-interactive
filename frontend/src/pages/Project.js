@@ -23,7 +23,7 @@ const Project = () => {
       }
     }
     fetchProject()
-  }, [dispatch])
+  }, [dispatch, id])
   return (
     <ThemeProvider theme={Theme}>
       <Box className="mainContainer">

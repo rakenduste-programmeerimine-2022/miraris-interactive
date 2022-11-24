@@ -1,10 +1,10 @@
-import { Typography, Box } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import "../App.css"
 
-export default function Header() {
-    return (
-        <Box className="footer">
-            <Typography>Miraris Interactive 2022</Typography>
-        </Box>
-    )
+export default function Footer() {
+  return (
+    <Box className="footer">
+      <Typography>Miraris Interactive 2022</Typography>
+    </Box>
+  )
 }

@@ -1,29 +1,39 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useParams } from "react-router-dom"
 import "../App.css"
-import { Box, TextField, Typography, Button } from "@mui/material"
+import { Box } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemText from "@mui/material/ListItemText"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Theme from "../components/Theme"
+import { useNewsContext } from "../hooks/useNewsContext"
+import NewsContent from "../components/NewsContent"
 
 const NewsPage = () => {
+  const { newsElement, dispatch } = useNewsContext()
+  const { id } = useParams()
+
+  useEffect(() => {
+    const fetchNewsById = async () => {
+      const response = await fetch(`http://localhost:8080/api/news/${id}`)
+      const json = await response.json()
+
+      if (response.ok) {
+        dispatch({ type: "SET_NEWS_BY_ID", payload: json })
+      }
+    }
+    fetchNewsById()
+  }, [dispatch, id])
   return (
     <ThemeProvider theme={Theme}>
       <Box className="mainContainer">
         <Header></Header>
-        <Typography>News title</Typography>
-        <List>
-          <ListItem>
-            <ListItemText primary="News contents" />
-          </ListItem>
-        </List>
-        <Box>
-          <TextField></TextField>
-          <Button>Add comment</Button>
-        </Box>
+        {newsElement && (
+          <NewsContent
+            key={newsElement._id}
+            newsElement={newsElement}
+          />
+        )}
         <Footer></Footer>
       </Box>
     </ThemeProvider>

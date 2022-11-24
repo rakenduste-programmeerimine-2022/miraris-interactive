@@ -6,7 +6,7 @@ export const useProjectsContext = () => {
 
   if (!context) {
     throw Error(
-      "useProjectsContext must be used inside an ProjectsContextProvider"
+      "useProjectsContext must be used inside a ProjectsContextProvider"
     )
   }
 

@@ -1,5 +1,8 @@
 const express = require("express")
-const dotenv = require("dotenv").config()
+const dotenv = require("dotenv")
+
+dotenv.config()
+
 const { errorHandler } = require("./middleware/error.middleware")
 const connectDB = require("./utility/db")
 const port = process.env.PORT || 8080
@@ -23,6 +26,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use("/api/users", require("./routes/user.routes"))
 app.use("/api/projects", require("./routes/project.routes"))
+app.use("/api/news", require("./routes/news.routes"))
 
 app.use(errorHandler)
 

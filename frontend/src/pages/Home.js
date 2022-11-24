@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { useNavigate } from "react-router-dom"
 import "../App.css"
-import { Paper, Box, Typography, Button } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
 import Carousel from "react-material-ui-carousel"
 import Header from "../components/Header"
@@ -39,7 +39,7 @@ const Home = () => {
             sx={{
               alignContent: "center",
               width: "512px",
-              height: "384px",
+              height: "384px"
             }}
           >
             <Box
@@ -62,7 +62,16 @@ const Home = () => {
         </Box>
         <Box className="contentContainer">
           <Typography>News</Typography>
-          <Box sx={{ display: "flex", flexDirection: "column", maxWidth: "150px", padding: "25px", gap: "10px", alignItems: "right" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              maxWidth: "150px",
+              padding: "25px",
+              gap: "10px",
+              alignItems: "right"
+            }}
+          >
             <Button
               color="primary"
               onClick={project1}
