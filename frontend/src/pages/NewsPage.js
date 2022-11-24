@@ -8,6 +8,7 @@ import Footer from "../components/Footer"
 import Theme from "../components/Theme"
 import { useNewsContext } from "../hooks/useNewsContext"
 import NewsContent from "../components/NewsContent"
+import NewsComments from "../components/NewsComments"
 
 const NewsPage = () => {
   const { newsElement, dispatch } = useNewsContext()
@@ -34,6 +35,7 @@ const NewsPage = () => {
             newsElement={newsElement}
           />
         )}
+        <NewsComments />
         <Footer></Footer>
       </Box>
     </ThemeProvider>
