@@ -30,34 +30,36 @@ const News = () => {
   }
   return (
     <ThemeProvider theme={Theme}>
-      <Box className="news">
+      <Box className="mainContainer">
         <Header></Header>
         <Typography>All news</Typography>
-        <Button
-          color="primary"
-          onClick={handleSort}
-        >
-          Sort by date
-        </Button>
-        <List>
-          {!sortReverse &&
-            news &&
-            news.map(newsElement => (
-              <NewsDetails
-                key={newsElement._id}
-                newsElement={newsElement}
-              />
-            ))}
-          {sortReverse &&
-            news &&
-            [...news].reverse().map(newsElement => (
-              <NewsDetails
-                key={newsElement._id}
-                newsElement={newsElement}
-              />
-            ))}
-        </List>
-        <Footer></Footer>
+        <Box className="news">
+          <Button
+            color="primary"
+            onClick={handleSort}
+          >
+            Sort by date
+          </Button>
+          <List>
+            {!sortReverse &&
+              news &&
+              news.map(newsElement => (
+                <NewsDetails
+                  key={newsElement._id}
+                  newsElement={newsElement}
+                />
+              ))}
+            {sortReverse &&
+              news &&
+              [...news].reverse().map(newsElement => (
+                <NewsDetails
+                  key={newsElement._id}
+                  newsElement={newsElement}
+                />
+              ))}
+          </List>
+          <Footer></Footer>
+        </Box>
       </Box>
     </ThemeProvider>
   )
