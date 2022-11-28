@@ -8,8 +8,10 @@ import {
   FormControl,
   FormGroup,
   Input,
-  InputLabel
+  InputLabel,
+  Typography
 } from "@mui/material"
+import CommentList from "../components/PostList"
 
 const NewsComments = () => {
   const { dispatch } = useCommentsContext()
@@ -50,26 +52,31 @@ const NewsComments = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FormGroup>
-        <FormControl required>
-          <InputLabel>Comment</InputLabel>
-          <Input
-            type="text"
-            onChange={e => setCommentBody(e.target.value)}
-            value={commentBody}
-          />
-        </FormControl>
-        <Button
-          color="success"
-          variant="contained"
-          type="submit"
-        >
-          Post comment
-        </Button>
-      </FormGroup>
-      {error && <Box>{error}</Box>}
-    </form>
+    <>
+      <Typography>Comments</Typography>
+      <CommentList></CommentList>
+      <form onSubmit={handleSubmit}>
+        <FormGroup>
+          <FormControl required>
+            <InputLabel>Comment</InputLabel>
+            <Input
+              className="commentField"
+              type="text"
+              onChange={e => setCommentBody(e.target.value)}
+              value={commentBody}
+            />
+          </FormControl>
+          <Button
+            color="success"
+            variant="contained"
+            type="submit"
+          >
+            Post comment
+          </Button>
+        </FormGroup>
+        {error && <Box>{error}</Box>}
+      </form>
+    </>
   )
 }
 

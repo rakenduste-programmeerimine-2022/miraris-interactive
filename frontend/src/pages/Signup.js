@@ -28,16 +28,7 @@ const Signup = () => {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "top",
-          flexDirection: "column",
-          gap: "25px",
-          height: "10vh"
-        }}
-      >
+      <Box className="mainContainer">
         <Header></Header>
         <Typography>Sign up</Typography>
         <form onSubmit={handleSubmit}>
