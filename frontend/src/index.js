@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals"
 import { AuthContextProvider } from "./context/AuthContext"
 import { ProjectsContextProvider } from "./context/ProjectContext"
 import { NewsContextProvider } from "./context/NewsContext"
+import { CommentsContextProvider } from "./context/CommentContext"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
@@ -13,7 +14,9 @@ root.render(
     <AuthContextProvider>
       <ProjectsContextProvider>
         <NewsContextProvider>
-          <App />
+          <CommentsContextProvider>
+            <App />
+          </CommentsContextProvider>
         </NewsContextProvider>
       </ProjectsContextProvider>
     </AuthContextProvider>
