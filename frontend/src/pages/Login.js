@@ -27,17 +27,7 @@ const Login = () => {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "top",
-          flexDirection: "column",
-          gap: "25px",
-          height: "10vh",
-          width: "100%"
-        }}
-      >
+      <Box className="mainContainer">
         <Header></Header>
         <Typography>Login</Typography>
         <form onSubmit={handleSubmit}>

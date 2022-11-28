@@ -13,11 +13,11 @@ import projectImage2 from "../images/natarc.jpg"
 const Home = () => {
   const navigate = useNavigate()
   const project1 = () => {
-    let path = "/projects/project"
+    let path = "/projects/63726bb3f5ddd84483f82406"
     navigate(path)
   }
   const project2 = () => {
-    let path = "/projects/project"
+    let path = "/projects/63726b0ef5ddd84483f82404"
     navigate(path)
   }
 
@@ -74,13 +74,13 @@ const Home = () => {
           >
             <Button
               color="primary"
-              onClick={project1}
+              onClick={project2}
             >
               Painted Blood
             </Button>
             <Button
               color="primary"
-              onClick={project2}
+              onClick={project1}
             >
               NatArc
             </Button>
