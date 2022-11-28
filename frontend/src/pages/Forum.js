@@ -15,8 +15,8 @@ const Forum = () => {
       <Box className="mainContainer">
         <Header></Header>
         <Typography>Forum</Typography>
-        <List className="contentList">
-          <ListItem className="forumCategory">
+        <List className="forumList">
+          <ListItem className="listItem">
             <ListItemText
               primary="Category 1"
               secondary="Category 1 description"
@@ -36,7 +36,7 @@ const Forum = () => {
               </ListItem>
             </List>
           </ListItem>
-          <ListItem className="forumCategory">
+          <ListItem className="listItem">
             <ListItemText
               primary="Category 2"
               secondary="Category 2 description"
