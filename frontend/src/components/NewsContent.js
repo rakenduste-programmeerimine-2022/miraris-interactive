@@ -1,6 +1,10 @@
 import { Typography } from "@mui/material"
+import { PropTypes } from "prop-types"
 
 const NewsContent = ({ newsElement }) => {
+  let header = newsElement.header
+  let introduction = newsElement.introduction
+  let body = newsElement.body
   return (
     <>
       <Typography
@@ -10,22 +14,28 @@ const NewsContent = ({ newsElement }) => {
           maxWidth: 720
         }}
       >
-        {newsElement.header}
+        {header}
       </Typography>
       <Typography
         align="justify"
         sx={{ width: "100%", maxWidth: 720, whiteSpace: "pre-line" }}
       >
-        {newsElement.introduction}
+        {introduction}
       </Typography>
       <Typography
         align="justify"
         sx={{ width: "100%", maxWidth: 720, whiteSpace: "pre-line" }}
       >
-        {newsElement.body}
+        {body}
       </Typography>
     </>
   )
+}
+
+NewsContent.propTypes = {
+  header: PropTypes.string,
+  introduction: PropTypes.string,
+  body: PropTypes.string
 }
 
 export default NewsContent

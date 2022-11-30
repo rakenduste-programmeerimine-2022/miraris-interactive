@@ -60,6 +60,7 @@ const NewsComments = () => {
           <FormControl required>
             <InputLabel>Comment</InputLabel>
             <Input
+              id="newsComment"
               className="commentField"
               type="text"
               onChange={e => setCommentBody(e.target.value)}
