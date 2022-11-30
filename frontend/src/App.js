@@ -42,6 +42,10 @@ export default function App() {
           element={<Forum />}
         />
         <Route
+          path="/forum/category/:id"
+          element={<ForumTopic />}
+        />
+        <Route
           path="/forum/topic"
           element={<ForumTopic />}
         />

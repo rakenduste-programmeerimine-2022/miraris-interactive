@@ -3,7 +3,9 @@ const mongoose = require("mongoose")
 const forumPostSchema = mongoose.Schema(
   {
     topic: {
-      type: mongoose.Schema.Types.ObjectId
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "ForumTopic"
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -11,7 +13,8 @@ const forumPostSchema = mongoose.Schema(
       ref: "User"
     },
     post: {
-      type: String
+      type: String,
+      required: true
     }
   },
   {
