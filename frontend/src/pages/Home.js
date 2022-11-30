@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "../App.css"
 import { Box, Button, List, Typography } from "@mui/material"
@@ -14,7 +14,6 @@ import projectImage2 from "../images/natarc.jpg"
 
 const Home = () => {
   const { news, dispatch } = useNewsContext()
-  const [sortReverse, setSortReverse] = useState(false)
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -81,17 +80,8 @@ const Home = () => {
           <Box className="latestNews">
             <Typography>News</Typography>
             <List>
-              {!sortReverse &&
-                news &&
+              {news &&
                 news.map(newsElement => (
-                  <NewsDetails
-                    key={newsElement._id}
-                    newsElement={newsElement}
-                  />
-                ))}
-              {sortReverse &&
-                news &&
-                [...news].reverse().map(newsElement => (
                   <NewsDetails
                     key={newsElement._id}
                     newsElement={newsElement}
