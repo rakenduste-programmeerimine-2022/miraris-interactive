@@ -45,8 +45,21 @@ const setComment = asyncHandler(async (req, res) => {
   res.status(200).json(comment)
 })
 
+// @desc    Get comments
+// @route   GET /api/news/comments/:id
+// @access  Private
+const getComments = asyncHandler(async (req, res) => {
+  const comments = await Comment.find({ post: req.params.id }).populate(
+    "user",
+    "name"
+  )
+
+  res.status(200).json(comments)
+})
+
 module.exports = {
   getNews,
   getNewsById,
-  setComment
+  setComment,
+  getComments
 }

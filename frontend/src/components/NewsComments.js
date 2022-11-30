@@ -11,7 +11,7 @@ import {
   InputLabel,
   Typography
 } from "@mui/material"
-import CommentList from "../components/PostList"
+import CommentList from "./PostList"
 
 const NewsComments = () => {
   const { dispatch } = useCommentsContext()

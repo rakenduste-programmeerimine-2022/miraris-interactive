@@ -4,9 +4,13 @@ export const CommentsContext = createContext()
 
 export const commentsReducer = (state, action) => {
   switch (action.type) {
+    case "SET_COMMENTS":
+      return {
+        comments: action.payload
+      }
     case "CREATE_COMMENT":
       return {
-        comment: action.payload
+        comments: [...state.comments, action.payload]
       }
     default:
       return state
@@ -15,7 +19,7 @@ export const commentsReducer = (state, action) => {
 
 export const CommentsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(commentsReducer, {
-    comment: null
+    comments: null
   })
 
   return (
