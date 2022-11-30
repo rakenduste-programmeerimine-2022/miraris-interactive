@@ -1,6 +1,11 @@
 import { Typography } from "@mui/material"
+import PropTypes from "prop-types"
 
 const ProjectContent = ({ project }) => {
+  let title = project.title
+  let description = project.description
+  let content = project.content
+
   return (
     <>
       <Typography
@@ -10,22 +15,28 @@ const ProjectContent = ({ project }) => {
           maxWidth: 720
         }}
       >
-        {project.title}
+        {title}
       </Typography>
       <Typography
         align="justify"
         sx={{ width: "100%", maxWidth: 720, whiteSpace: "pre-line" }}
       >
-        {project.description}
+        {description}
       </Typography>
       <Typography
         align="justify"
         sx={{ width: "100%", maxWidth: 720, whiteSpace: "pre-line" }}
       >
-        {project.content}
+        {content}
       </Typography>
     </>
   )
+}
+
+ProjectContent.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  content: PropTypes.string
 }
 
 export default ProjectContent
