@@ -26,11 +26,9 @@ afterEach(() => {
 
 it("renders with given test header, introduction, and body", () => {
   act(() => {
-    render(NewsContent = ({ newsElement }), container)
+    render(<NewsContent newsElement={newsElement}></NewsContent>, container)
   })
   expect(container.textContent).toBe(
-    "mockNews",
-    "mockNewsIntroduction",
-    "mockNewsBody"
+    "mockNewsmockNewsIntroductionmockNewsBody"
     )
 })
