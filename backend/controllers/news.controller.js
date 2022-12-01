@@ -47,7 +47,7 @@ const setComment = asyncHandler(async (req, res) => {
 
 // @desc    Get comments
 // @route   GET /api/news/comments/:id
-// @access  Private
+// @access  Public
 const getComments = asyncHandler(async (req, res) => {
   const comments = await Comment.find({ post: req.params.id }).populate(
     "user",

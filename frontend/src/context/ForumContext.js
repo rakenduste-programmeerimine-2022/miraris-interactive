@@ -12,6 +12,10 @@ export const forumReducer = (state, action) => {
       return {
         topics: action.payload
       }
+    case "SET_TOPIC_BY_ID":
+      return {
+        topic: action.payload
+      }
     default:
       return state
   }

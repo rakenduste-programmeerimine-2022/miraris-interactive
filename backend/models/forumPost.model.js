@@ -12,7 +12,11 @@ const forumPostSchema = mongoose.Schema(
       required: true,
       ref: "User"
     },
-    post: {
+    title: {
+      type: String,
+      required: true
+    },
+    body: {
       type: String,
       required: true
     }
@@ -22,4 +26,4 @@ const forumPostSchema = mongoose.Schema(
   }
 )
 
-module.exports = mongoose.model("ForumPost", forumPostSchema)
+module.exports = mongoose.model("ForumPost", forumPostSchema, "forumPosts")
