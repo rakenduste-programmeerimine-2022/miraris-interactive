@@ -2,7 +2,7 @@ import React from "react"
 import { render, unmountComponentAtNode } from "react-dom"
 import { act } from "react-dom/test-utils"
 
-import NewsContent from "./components/NewsContent"
+import NewsContent from "../components/NewsContent"
 
 let container = null
 let newsElement = {
