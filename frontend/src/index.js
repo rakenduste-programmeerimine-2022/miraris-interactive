@@ -8,6 +8,7 @@ import { ProjectsContextProvider } from "./context/ProjectContext"
 import { NewsContextProvider } from "./context/NewsContext"
 import { CommentsContextProvider } from "./context/CommentContext"
 import { ForumContextProvider } from "./context/ForumContext"
+import { PostssContextProvider } from "./context/PostContext"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
@@ -17,7 +18,9 @@ root.render(
         <NewsContextProvider>
           <CommentsContextProvider>
             <ForumContextProvider>
-              <App />
+              <PostssContextProvider>
+                <App />
+              </PostssContextProvider>
             </ForumContextProvider>
           </CommentsContextProvider>
         </NewsContextProvider>
