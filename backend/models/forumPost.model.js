@@ -3,15 +3,22 @@ const mongoose = require("mongoose")
 const forumPostSchema = mongoose.Schema(
   {
     topic: {
-      type: mongoose.Schema.Types.ObjectId
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "ForumTopic"
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User"
     },
-    post: {
-      type: String
+    title: {
+      type: String,
+      required: true
+    },
+    body: {
+      type: String,
+      required: true
     }
   },
   {
@@ -19,4 +26,4 @@ const forumPostSchema = mongoose.Schema(
   }
 )
 
-module.exports = mongoose.model("ForumPost", forumPostSchema)
+module.exports = mongoose.model("ForumPost", forumPostSchema, "forumPosts")

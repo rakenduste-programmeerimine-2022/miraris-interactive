@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useParams } from "react-router-dom"
-import { useCommentsContext } from "../hooks/useCommentsContext"
+import { usePostsContext } from "../hooks/usePostsContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 import {
   Box,
@@ -8,17 +8,17 @@ import {
   FormControl,
   FormGroup,
   Input,
-  InputLabel,
-  Typography
+  InputLabel
 } from "@mui/material"
-import CommentList from "./PostList"
+import ForumPostList from "./ForumPostList"
 
-const NewsComments = () => {
-  const { dispatch } = useCommentsContext()
+const ForumTopicPosts = () => {
+  const { dispatch } = usePostsContext()
   const { user } = useAuthContext()
   const { id } = useParams()
 
-  const [commentBody, setCommentBody] = useState("")
+  const [postTitle, setPostTitle] = useState("")
+  const [postBody, setPostBody] = useState("")
   const [error, setError] = useState(null)
 
   const handleSubmit = async e => {
@@ -29,11 +29,11 @@ const NewsComments = () => {
       return
     }
 
-    const comment = { id, commentBody }
+    const post = { id, postTitle, postBody }
 
-    const response = await fetch(`http://localhost:8080/api/news/`, {
+    const response = await fetch(`http://localhost:8080/api/forum/topic`, {
       method: "POST",
-      body: JSON.stringify(comment),
+      body: JSON.stringify(post),
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${user.token}`
@@ -45,26 +45,34 @@ const NewsComments = () => {
       setError(json.error)
     }
     if (response.ok) {
-      setCommentBody("")
+      setPostTitle("")
+      setPostBody("")
       setError(null)
-      dispatch({ type: "CREATE_COMMENT", payload: json })
+      dispatch({ type: "CREATE_POST", payload: json })
     }
   }
 
   return (
     <>
-      <Typography>Comments</Typography>
-      <CommentList></CommentList>
+      <ForumPostList />
       <form onSubmit={handleSubmit}>
         <FormGroup>
           <FormControl required>
-            <InputLabel>Comment</InputLabel>
+            <InputLabel>Post title</InputLabel>
             <Input
-              id="newsComment"
               className="commentField"
               type="text"
-              onChange={e => setCommentBody(e.target.value)}
-              value={commentBody}
+              onChange={e => setPostTitle(e.target.value)}
+              value={postTitle}
+            />
+          </FormControl>
+          <FormControl required>
+            <InputLabel>Post contents</InputLabel>
+            <Input
+              className="commentField"
+              type="text"
+              onChange={e => setPostBody(e.target.value)}
+              value={postBody}
             />
           </FormControl>
           <Button
@@ -72,7 +80,7 @@ const NewsComments = () => {
             variant="contained"
             type="submit"
           >
-            Post comment
+            Post
           </Button>
         </FormGroup>
         {error && <Box>{error}</Box>}
@@ -81,4 +89,4 @@ const NewsComments = () => {
   )
 }
 
-export default NewsComments
+export default ForumTopicPosts

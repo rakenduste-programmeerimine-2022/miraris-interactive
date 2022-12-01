@@ -7,6 +7,7 @@ import NewsPage from "./pages/NewsPage"
 import Portfolio from "./pages/Portfolio"
 import Forum from "./pages/Forum"
 import ForumTopic from "./pages/ForumTopic"
+import ForumPost from "./pages/ForumPost"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Project from "./pages/Project"
@@ -42,8 +43,12 @@ export default function App() {
           element={<Forum />}
         />
         <Route
-          path="/forum/topic"
+          path="/forum/category/:id"
           element={<ForumTopic />}
+        />
+        <Route
+          path="/forum/topic/:id"
+          element={<ForumPost />}
         />
         <Route
           path="/login"

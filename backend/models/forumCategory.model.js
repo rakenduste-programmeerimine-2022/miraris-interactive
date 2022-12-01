@@ -3,10 +3,12 @@ const mongoose = require("mongoose")
 const forumCategorySchema = mongoose.Schema(
   {
     category: {
-      type: String
+      type: String,
+      required: true
     },
     description: {
-      type: String
+      type: String,
+      required: true
     }
   },
   {
@@ -14,4 +16,8 @@ const forumCategorySchema = mongoose.Schema(
   }
 )
 
-module.exports = mongoose.model("ForumCategory", forumCategorySchema)
+module.exports = mongoose.model(
+  "ForumCategory",
+  forumCategorySchema,
+  "forumCategories"
+)

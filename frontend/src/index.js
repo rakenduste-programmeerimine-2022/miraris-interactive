@@ -7,6 +7,8 @@ import { AuthContextProvider } from "./context/AuthContext"
 import { ProjectsContextProvider } from "./context/ProjectContext"
 import { NewsContextProvider } from "./context/NewsContext"
 import { CommentsContextProvider } from "./context/CommentContext"
+import { ForumContextProvider } from "./context/ForumContext"
+import { PostssContextProvider } from "./context/PostContext"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
@@ -15,7 +17,11 @@ root.render(
       <ProjectsContextProvider>
         <NewsContextProvider>
           <CommentsContextProvider>
-            <App />
+            <ForumContextProvider>
+              <PostssContextProvider>
+                <App />
+              </PostssContextProvider>
+            </ForumContextProvider>
           </CommentsContextProvider>
         </NewsContextProvider>
       </ProjectsContextProvider>
