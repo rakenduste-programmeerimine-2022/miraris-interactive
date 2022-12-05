@@ -8,7 +8,7 @@ let container = null
 let newsElement = {
   header: "mockNews",
   introduction: "mockNewsIntroduction",
-  body: "mockNewsBody",
+  body: "mockNewsBody"
 }
 
 beforeEach(() => {
@@ -28,7 +28,5 @@ it("renders with given test header, introduction, and body", () => {
   act(() => {
     render(<NewsContent newsElement={newsElement}></NewsContent>, container)
   })
-  expect(container.textContent).toBe(
-    "mockNewsmockNewsIntroductionmockNewsBody"
-    )
+  expect(container.textContent).toBe("mockNewsmockNewsIntroductionmockNewsBody")
 })

@@ -8,7 +8,7 @@ let container = null
 let project = {
   title: "mockTitle",
   description: "mockDescription",
-  content: "mockContent",
+  content: "mockContent"
 }
 
 beforeEach(() => {
@@ -28,7 +28,5 @@ it("renders with given test title, description, and content", () => {
   act(() => {
     render(<ProjectContent project={project}></ProjectContent>, container)
   })
-  expect(container.textContent).toBe(
-    "mockTitlemockDescriptionmockContent"
-    )
+  expect(container.textContent).toBe("mockTitlemockDescriptionmockContent")
 })
