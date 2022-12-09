@@ -14,6 +14,9 @@ import { ThemeProvider } from "@mui/material/styles"
 import Header from "../components/Header"
 import Theme from "../components/Theme"
 
+const express = require('express')
+const app = express()
+
 const Signup = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -22,6 +25,14 @@ const Signup = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+
+    if(!(email.isEmail())){
+      error += " Please enter a valid email! "
+    }
+    
+    if(!(password.isLength({ min: 6 }))){
+      error += " Password length must be atleast 6 characters. "
+    }
 
     await signup(name, email, password)
   }

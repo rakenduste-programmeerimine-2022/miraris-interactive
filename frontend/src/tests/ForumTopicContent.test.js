@@ -2,13 +2,12 @@ import React from "react"
 import { render, unmountComponentAtNode } from "react-dom"
 import { act } from "react-dom/test-utils"
 
-import ProjectContent from "../components/ProjectContent"
+import ForumTopicContent from "../components/ForumTopicContent"
 
 let container = null
-let project = {
-  title: "mockTitle",
-  description: "mockDescription",
-  content: "mockContent"
+let topic = {
+    forumTopic: "testTopic",
+    forumTopicDescription: "testTopicDesc"
 }
 
 beforeEach(() => {
@@ -24,9 +23,9 @@ afterEach(() => {
   container = null
 })
 
-it("renders with given test title, description, and content", () => {
+it("renders with given test name and description", () => {
   act(() => {
-    render(<ProjectContent project={project}></ProjectContent>, container)
+    render(<ForumTopicContent topic={topic}></ForumTopicContent>, container)
   })
-  expect(container.textContent).toBe("mockTitlemockDescriptionmockContent")
+  expect(container.textContent).toBe("testTopictestTopicDesc")
 })

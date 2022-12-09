@@ -1,7 +1,7 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import "../App.css"
-import { Box, Typography } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import { ThemeProvider } from "@mui/material/styles"
 import List from "@mui/material/List"
 import Header from "../components/Header"
@@ -12,6 +12,7 @@ import ForumTopicContent from "../components/ForumTopicContent"
 
 const ForumTopic = () => {
   const { topics, dispatch } = useForumContext()
+  const [sortReverse, setSortReverse] = useState(false)
   const { id } = useParams()
 
   useEffect(() => {
@@ -28,14 +29,33 @@ const ForumTopic = () => {
     fetchTopics()
   }, [dispatch, id])
 
+  const handleSort = () => {
+    setSortReverse(current => !current)
+  }
+
   return (
     <ThemeProvider theme={Theme}>
       <Box className="mainContainer">
         <Header></Header>
         <Typography>Topics</Typography>
+        <Button
+          color="primary"
+          onClick={handleSort}
+        >
+          Sort by date
+        </Button>
         <List className="forumList">
-          {topics &&
+          {!sortReverse &&
+            topics &&
             topics.map(topic => (
+              <ForumTopicContent
+                key={topic._id}
+                topic={topic}
+              />
+            ))}
+          {sortReverse &&
+            topics &&
+            [...topics].reverse().map(topic => (
               <ForumTopicContent
                 key={topic._id}
                 topic={topic}
