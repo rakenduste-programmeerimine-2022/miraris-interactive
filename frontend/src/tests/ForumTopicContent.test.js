@@ -6,8 +6,8 @@ import ForumTopicContent from "../components/ForumTopicContent"
 
 let container = null
 let topic = {
-    forumTopic: "testTopic",
-    forumTopicDescription: "testTopicDesc"
+  forumTopic: "testTopic",
+  forumTopicDescription: "testTopicDesc"
 }
 
 beforeEach(() => {
